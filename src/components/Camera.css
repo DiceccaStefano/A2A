@@ -1,0 +1,72 @@
+.buttonCamera {
+  width: 40% !important;
+  max-width: 40% !important;
+  height: auto !important;
+}
+
+.canvaS {
+  width: 100%;
+  max-width: 55%;
+  height: auto;
+}
+
+.absolutePos {
+  position: absolute;
+  top: 100px;
+  right: 300px;
+  width: 200px;
+  height: 100px;
+  border: 3px solid #73ad21;
+}
+
+.adv {
+  background-color: green;
+  border: 3px solid #73ad21;
+  max-width: 300px;
+}
+
+/* BUTTON */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600&display=swap");
+
+.span_button {
+  position: relative;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+.span_button a {
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform 0.25s;
+  font-family: "Montserrat", sans-serif;
+}
+.span_button a:before,
+.span_button a:after {
+  position: absolute;
+  content: "Scatta una foto";
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid black;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+.span_button a:before {
+  color: #000;
+  background: rgb(0, 159, 218);
+  transform: rotateY(0deg) translateZ(25px);
+}
+.span_button a:after {
+  color: #000;
+  background: rgb(0, 170, 231);
+  transform: rotateX(90deg) translateZ(25px);
+}
+.span_button a:hover {
+  transform: translateZ(-25px) rotateX(-90deg);
+}

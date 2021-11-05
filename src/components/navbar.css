@@ -1,0 +1,12 @@
+.back-nav {
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 300;
+
+  background-color: rgba(245, 245, 245, 0.933);
+  width: 100%;
+}
+
+.back-nav.active {
+  background-color: whitesmoke;
+}
