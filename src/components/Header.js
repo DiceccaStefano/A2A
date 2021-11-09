@@ -29,6 +29,10 @@ const Header = () => {
                                         <button className="btn-search"><i class="fas fa-camera"></i></button>
                                         <input type="text" className="input-search" placeholder="Cerca un articolo..." />
                                     </Link>
+                                    {/* <Link to="ia" className="search-box mt-3">
+                                        <button className="btn-search"><i class="fas fa-eye"></i></button>
+                                        <input type="text" className="input-search" placeholder="Cerca un articolo..." />
+                                    </Link> */}
                                 </div>
 
 

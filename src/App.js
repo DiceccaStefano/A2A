@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import React, { useState, Fragment } from 'react';
 import Camera from './components/Camera';
-// import { CameraFeed } from './components/camera-feed';
+
 
 
 //CSS
@@ -43,6 +43,8 @@ import Services from './components/Services';
 
 import ErrorPage from './components/ErrorPage';
 
+import TencentRec from './components/TencentRec';
+
 
 
 
@@ -79,34 +81,49 @@ import './styles.css';
 const App = () => {
 
   return <Router>
-    <Nav_bar />
+
 
 
     <Switch>
 
       <Route exact path="/">
+        <Nav_bar />
 
         <Header />
         <Cards />
+        <Footer />
+
 
 
 
       </Route>
 
       <Route path="/servizi">
+        <Nav_bar />
 
         <Services />
+        <Footer />
+
 
       </Route>
 
+      <Route path="/ia">
+        <Nav_bar />
+        <TencentRec />
+      </Route>
+
       <Route path="/fotocamera">
+        <Nav_bar />
         <Camera />
       </Route>
 
 
 
       <Route path="*">
+        <Nav_bar />
         <ErrorPage />
+        <Footer />
+
       </Route>
 
 
@@ -114,7 +131,6 @@ const App = () => {
 
     </Switch>
 
-    <Footer />
 
 
   </Router>;

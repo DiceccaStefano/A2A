@@ -25,6 +25,50 @@
   max-width: 300px;
 }
 
+.forlabel {
+  background-color: white;
+  border: solid 1px transparent;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+/* NavbarCamera Camera */
+
+.NavbarCamera {
+  display: flex;
+
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.NavbarCamera a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.NavbarCamera a:hover {
+  background: #f1f1f1;
+  color: black;
+}
+
+.NavbarCamera a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+.main {
+  display: flex !important;
+  align-items: center !important;
+}
+
 /* BUTTON */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:600&display=swap");
 
