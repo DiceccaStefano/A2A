@@ -32,11 +32,11 @@ const Camera = () => {
 
         width: 440,
         height: 290,
-        //facingMode: "user",
+        facingMode: "user",
 
 
 
-        facingMode: { exact: "environment" }
+        //facingMode: { exact: "environment" }
 
     };
 
@@ -104,13 +104,28 @@ const Camera = () => {
                         </div>
                         :
                         <div className=" d-flex flex-column justify-content-center">
-                            <div className="d-flex  justify-content-center mb-1">
-                                <div className="forlabel "
-
-                                >
-                                    <h4 className="mx-2">Fai una foto al rifiuto</h4>
+                            {!isMobile ?
+                                <div className="d-flex  justify-content-center mb-1">
+                                    <div className="forlabel ">
+                                        <h4 className="">Fai una foto al rifiuto</h4>
+                                    </div>
                                 </div>
-                            </div>
+
+                                :
+
+
+                                <div className="d-flex  justify-content-center mb-1" style={{
+                                    position: "absolute",
+                                    top: "113px",
+                                    right: "44px",
+                                    left: "44px",
+                                }}>
+                                    <div className="forlabel" >
+                                        <h5 className="">
+                                            Fai una foto al rifiuto
+                                        </h5>
+                                    </div>
+                                </div>}
                             <div className="d-flex  justify-content-center " >
                                 <Webcam
                                     audio={false}

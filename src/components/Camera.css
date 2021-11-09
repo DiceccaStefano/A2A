@@ -25,8 +25,17 @@
   max-width: 300px;
 }
 
-.forlabel {
+.forlabelMobile {
   background-color: white;
+  color: white;
+  border: solid 1px transparent;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.forlabel {
+  background-color: rgba(0, 0, 0, 0.644);
   border: solid 1px transparent;
   border-radius: 10px;
   margin-bottom: 5px;
