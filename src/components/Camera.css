@@ -26,16 +26,15 @@
 }
 
 .forlabelMobile {
-  background-color: white;
-  color: white;
-  border: solid 1px transparent;
+  background-color: rgba(0, 0, 0, 0.514);
+  color: whitesmoke;
+  border: solid 2px black;
   border-radius: 10px;
-  margin-bottom: 5px;
-  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  padding: 2px;
 }
 
 .forlabel {
-  background-color: rgba(0, 0, 0, 0.644);
+  background-color: whitesmoke;
   border: solid 1px transparent;
   border-radius: 10px;
   margin-bottom: 5px;

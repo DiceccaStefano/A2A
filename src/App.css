@@ -226,7 +226,7 @@ header .overlay {
   outline: none !important;
   border-radius: 25px !important;
   transition: all 0.5s ease-in-out !important;
-  background-color: #22a6b3 !important;
+  background-color: #22a6b3;
   padding-right: 40px !important;
   color: #fff !important;
 }

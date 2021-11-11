@@ -11,7 +11,7 @@ import DisplayImage from "./ImageUploder";
 import "./Camera.css"
 
 
-const Camera = () => {
+const AdvanceCamera = () => {
     const webcamRef = React.useRef(null);
     const [imgSrc, setImgSrc] = React.useState(null);
 
@@ -186,6 +186,7 @@ const Camera = () => {
                                     >
                                         Scatta una foto
                                     </button>
+                                    <DisplayImage />
                                 </div>
                                 :
 
@@ -201,14 +202,6 @@ const Camera = () => {
                                         <Link to="/">
 
 
-                                            {/* <button className="btn btn-success mt-3 mx-3"
-                                            data-toggle="button"
-                                            aria-pressed="false"
-                                            autocomplete="off"
-
-                                        >
-                                            <i className="fas fa-home"></i>
-                                        </button> */}
                                         </Link>
                                         <div className="search-box " onClick={capture}>
                                             <button className="btn-search">
@@ -217,13 +210,7 @@ const Camera = () => {
                                             <input type="text" className="input-search" />
                                         </div>
 
-                                        {/* <button className="btn btn-primary mt-3"
-                                        data-toggle="button"
-                                        aria-pressed="false"
-                                        autocomplete="off"
-                                        onClick={capture}>
-                                        <i class="fas fa-camera"></i>
-                                    </button> */}
+
 
 
                                     </div>
@@ -233,7 +220,7 @@ const Camera = () => {
                                             position: "absolute",
                                             top: "-64px",
                                             right: "20px",
-                                            left: "263px"
+                                            left: "267px"
                                         }} >
                                             <button className="btn-search " >
                                                 <i className="far fa-images"></i>
@@ -260,6 +247,7 @@ const Camera = () => {
             </div >
 
             {/* UPLODER IMAGE */}
+
 
 
             {/* FOOTER  SMALL*/}
@@ -289,4 +277,4 @@ const Camera = () => {
 
 // https://www.npmjs.com/package/react-webcam
 
-export default Camera
+export default AdvanceCamera;

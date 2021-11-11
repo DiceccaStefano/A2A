@@ -70,34 +70,36 @@ const TencentRec = () => {
 
     //Webcam:
     const webcamRef = React.useRef(null);
-    const [videoWidth, setVideoWidth] = useState(1920);
-    const [videoHeight, setVideoHeight] = useState(1080);
+    const [videoWidth, setVideoWidth] = useState(490);
+    const [videoHeight, setVideoHeight] = useState(290);
 
     const videoConstraints = {
-        height: 1080,
-        width: 1920,
-        facingMode: "environment",
+        height: 290,
+        width: 490,
+        facingMode: { exact: "environment" },
     };
 
     return (
 
         <>
-            <button
-                variant={"contained"}
-                style={{
-                    color: "white",
-                    backgroundColor: "blueviolet",
-                    width: "50%",
-                    maxWidth: "250px",
-                }}
-                onClick={() => {
-                    predictionFunction();
-                }}
-            >
-                Start Detect
-            </button>
+
+            <div className="d-flex flex-column justify-content-center">
+                <div className="d-flex  justify-content-center">
+                    <button
+                        className="btn btn-success rounded-pill"
+                        variant={"contained"}
+                        style={{ marginTop: "10px" }}
+                        onClick={() => {
+                            predictionFunction();
+                        }}
+                    >
+                        Start Detect
+                    </button>
+                </div>
+            </div>
+
             <div style={{ position: "relative" }}>
-                <div style={{ position: "absolute", top: "100px" }}>
+                <div style={{ position: "absolute", top: "40px", right: "13px" }}>
                     <Webcam
                         audio={false}
                         id="img"

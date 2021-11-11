@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import React, { useState, Fragment } from 'react';
 import Camera from './components/Camera';
+import AdvanceCamera from './components/AdvanceCamera';
 
 
 
@@ -115,6 +116,12 @@ const App = () => {
       <Route path="/fotocamera">
         <Nav_bar />
         <Camera />
+      </Route>
+
+
+      <Route path="/AdvancedCamera">
+        <Nav_bar />
+        <AdvanceCamera />
       </Route>
 
 
