@@ -35,7 +35,7 @@ const Camera = () => {
 
         width: 490, //490
         height: 290, //290
-        // facingMode: "user",
+        facingMode: "user",
 
 
 
@@ -79,7 +79,7 @@ const Camera = () => {
                                     right: "44px",
                                     left: "44px",
                                 }}>
-                                    <div className="forlabel">
+                                    <div className="forlabel_mob_scatta">
                                         <h5 className="mx-2"> <i class="fas fa-dumpster mx-1"></i> Raccolta Indifferenziato </h5>
                                     </div>
                                 </div>}
@@ -110,8 +110,8 @@ const Camera = () => {
                                         style={{
                                             position: "absolute",
                                             top: "509px",
-                                            right: "79px",
-                                            left: "79px",
+                                            right: "78.75px",
+                                            left: "78.75px",
                                         }}>
                                         Nuova Foto
                                         <i className="fas fa-camera mx-1"></i>
