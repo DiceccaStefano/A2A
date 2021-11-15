@@ -42,11 +42,13 @@ const Nav_bar = () => {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <Link to="/advcamera" className="nav-link">
+
                                 <h4 className="navbar-ancor">
                                     Supporto
                                 </h4>
-                            </a>
+
+                            </Link>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">

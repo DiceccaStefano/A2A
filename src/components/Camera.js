@@ -7,13 +7,39 @@ import DisplayImage from "./ImageUploder";
 
 
 
+// LINKS FOR GALLERY AND PHONE CAMERA
+
+import ImageUploading from "react-images-uploading";
+
+import "./Advcamera.css";
+
+
 
 import "./Camera.css"
+
+
+
+
+
+
+
 
 
 const Camera = () => {
     const webcamRef = React.useRef(null);
     const [imgSrc, setImgSrc] = React.useState(null);
+
+
+    const [images, setImages] = React.useState([]);
+    const maxNumber = 69;
+    const onChange = (imageList, addUpdateIndex) => {
+        // data for submit
+        console.log(imageList, addUpdateIndex);
+        setImages(imageList);
+    };
+
+
+
 
     var isMobile = false; //initiate as false
     // device detection
@@ -22,7 +48,7 @@ const Camera = () => {
     }
 
 
-    console.log(isMobile)
+
 
 
     const capture = React.useCallback(() => {
@@ -35,7 +61,7 @@ const Camera = () => {
 
         width: 490, //490
         height: 290, //290
-        facingMode: "user",
+        //facingMode: "user",
 
 
 
@@ -56,13 +82,21 @@ const Camera = () => {
 
 
 
+
+
+
+
+
+
+
+
     return (
         <>
 
 
             <div className="d-flex flex-column my-3" style={{ minHeight: "85vh" }} >
                 <div>
-                    {imgSrc ?
+                    {imgSrc || images.length === 1 ?
 
                         <div className="d-flex flex-column justify-content-center">
 
@@ -89,6 +123,39 @@ const Camera = () => {
                                 <img style={{ boxShadow: "4.3px 8.6px 8.6px hsl(0deg 0% 0% / 0.37)", borderRadius: "15px" }} className=" img-fluid"
                                     src={imgSrc}
                                 />
+                                <div className="mt-5">
+                                    <ImageUploading
+                                        multiple
+                                        value={images}
+                                        onChange={onChange}
+                                        maxNumber={maxNumber}
+                                        dataURLKey="data_url">
+
+                                        {({
+                                            imageList,
+                                            onImageUpload,
+                                            onImageRemoveAll,
+                                            onImageUpdate,
+                                            onImageRemove,
+                                            isDragging,
+                                            dragProps
+                                        }) => (
+                                            // write your building UI
+                                            <div className="mt-5" >
+                                                {imageList.map((image, index) => (
+                                                    <div key={index} className="image-item">
+                                                        <img src={image.data_url} alt="" width="200" />
+                                                        <div className="image-item__btn-wrapper">
+
+                                                        </div>
+                                                    </div>
+                                                ))}
+
+                                            </div>
+                                        )}
+                                    </ImageUploading>
+
+                                </div>
                             </div>
                             {!isMobile ?
                                 <div className="d-flex  justify-content-center">
@@ -106,7 +173,7 @@ const Camera = () => {
                                         data-toggle="button"
                                         aria-pressed="false"
                                         autocomplete="off"
-                                        onClick={() => setImgSrc(null)}
+                                        onClick={() => { images.length === 1 ? setImages([]) : setImgSrc(null) }}
                                         style={{
                                             position: "absolute",
                                             top: "509px",
@@ -228,27 +295,56 @@ const Camera = () => {
 
                                     </div>
 
-                                    <Link to="/">
-                                        <div className="search-box mx-2" style={{
-                                            position: "absolute",
-                                            top: "-64px",
-                                            right: "20px",
-                                            left: "263px"
-                                        }} >
-                                            <button className="btn-search " >
-                                                <i className="far fa-images"></i>
-                                            </button>
-                                            <input type="text" className="input-search" style={{ backgroundColor: "#e76e3d" }} />
-                                        </div>
 
-                                        {/* <button className="btn btn-success mt-3 mx-3"
-                                            data-toggle="button"
-                                            aria-pressed="false"
-                                            autocomplete="off"
-                                        >
-                                            <i className="far fa-images"></i>
-                                        </button> */}
-                                    </Link>
+                                    <div className="search-box mx-2" style={{
+                                        position: "absolute",
+                                        top: "-63.5px",
+                                        right: "26px",
+                                        left: "257px"
+                                    }} >
+                                        <div className="">
+                                            <ImageUploading
+                                                multiple
+                                                value={images}
+                                                onChange={onChange}
+                                                maxNumber={maxNumber}
+                                                dataURLKey="data_url">
+
+                                                {({
+                                                    imageList,
+                                                    onImageUpload,
+                                                    onImageRemoveAll,
+                                                    onImageUpdate,
+                                                    onImageRemove,
+                                                    isDragging,
+                                                    dragProps
+                                                }) => (
+                                                    // write your building UI
+                                                    <div className="" >
+                                                        {imageList.map((image, index) => (
+                                                            <div key={index} className="image-item">
+                                                                <img src={image.data_url} alt="" width="100" />
+                                                                <div className="image-item__btn-wrapper">
+
+                                                                </div>
+                                                            </div>
+                                                        ))}
+                                                        <div className="search-box mx-2" onClick={onImageUpload} {...dragProps} >
+                                                            <button className="btn-search " >
+                                                                <i className="far fa-images"></i>
+                                                            </button>
+                                                            <input type="text" className="input-search" style={{ backgroundColor: "#e76e3d" }} />
+                                                        </div>
+
+
+                                                    </div>
+                                                )}
+                                            </ImageUploading>
+
+                                        </div>
+                                    </div>
+
+
                                 </div>}
 
 
@@ -260,6 +356,7 @@ const Camera = () => {
             </div >
 
             {/* UPLODER IMAGE */}
+
 
 
             {/* FOOTER  SMALL*/}

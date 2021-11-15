@@ -119,7 +119,7 @@ const App = () => {
       </Route>
 
 
-      <Route path="/AdvancedCamera">
+      <Route path="/advcamera">
         <Nav_bar />
         <AdvanceCamera />
       </Route>
