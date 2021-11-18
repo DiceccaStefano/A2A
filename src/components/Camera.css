@@ -133,3 +133,223 @@
 .span_button a:hover {
   transform: translateZ(-25px) rotateX(-90deg);
 }
+
+/* CODICE MOBILE  */
+
+/* return (
+            <div className="d-flex flex-column my-3" style={{ minHeight: "85vh" }} >
+                <div style={{ height: "80px" }}></div>
+                <div>
+                    {imgSrc || images.length === 1 ?
+
+                        <div className="d-flex flex-column justify-content-center">
+
+
+                            <div className="d-flex  justify-content-center mb-1" style={{
+                                position: "absolute",
+                                top: "113px",
+                                right: "44px",
+                                left: "44px",
+                            }}>
+                                <div className="forlabel_mob_scatta">
+                                    <h5 className="mx-2"> <i class="fas fa-dumpster mx-1"></i> Raccolta Indifferenziato </h5>
+                                </div>
+                            </div>
+
+                            <div className="d-flex  justify-content-center">
+
+                                <img style={{ boxShadow: "4.3px 8.6px 8.6px hsl(0deg 0% 0% / 0.37)", borderRadius: "15px" }} className=" img-fluid"
+                                    src={imgSrc}
+                                />
+                                <div className="mt-5">
+                                    <ImageUploading
+                                        multiple
+                                        value={images}
+                                        onChange={onChange}
+                                        maxNumber={maxNumber}
+                                        dataURLKey="data_url">
+
+                                        {({
+                                            imageList,
+                                            onImageUpload,
+                                            onImageRemoveAll,
+                                            onImageUpdate,
+                                            onImageRemove,
+                                            isDragging,
+                                            dragProps
+                                        }) => (
+                                            // write your building UI
+                                            <div className="mt-5" >
+                                                {imageList.map((image, index) => (
+                                                    <div key={index} className="image-item">
+                                                        <img src={image.data_url} alt="" width="200" />
+                                                        <div className="image-item__btn-wrapper">
+
+                                                        </div>
+                                                    </div>
+                                                ))}
+
+                                            </div>
+                                        )}
+                                    </ImageUploading>
+
+                                </div>
+                            </div>
+
+                            <div className="d-flex  justify-content-center">
+                                <button className="btn btn-success mt-3"
+                                    data-toggle="button"
+                                    aria-pressed="false"
+                                    autocomplete="off"
+                                    onClick={() => { images.length === 1 ? setImages([]) : setImgSrc(null) }}
+                                    style={{
+                                        position: "absolute",
+                                        top: "509px",
+                                        right: "78.75px",
+                                        left: "78.75px",
+                                    }}>
+                                    Nuova Foto
+                                    <i className="fas fa-camera mx-1"></i>
+                                </button>
+                            </div>
+
+
+
+                        </div>
+                        :
+
+                        <div className=" d-flex flex-column justify-content-center">
+
+                            <div className="d-inline-flex  bd-highlight">
+                                <Link className="mt-3 ml-5 " to="/">
+                                    <div className="  d-flex flex-row " style={{
+                                        padding: "0px",
+
+                                        maxWidth: "30px",
+                                        borderRadius: "10px",
+                                        color: "#009fda",
+                                    }}>
+                                        <i style={{ marginTop: "2.5px" }} className="fas fa-arrow-left mr-1"></i>
+                                        <h6 >Indietro</h6>
+                                    </div>
+
+
+                                </Link>
+
+                            </div>
+
+
+
+
+                            <div
+                                className="d-flex  justify-content-center mb-1" style={{
+                                    position: "absolute",
+                                    top: "145px",
+                                    right: "44px",
+                                    left: "44px",
+                                }}>
+                                <div className="forlabelMobile" >
+                                    <h5 className="mx-2">
+                                        Fai una foto al rifiuto
+                                    </h5>
+                                </div>
+                            </div>
+
+                            <div className="d-flex  justify-content-center " >
+                                <Webcam
+                                    audio={false}
+                                    ref={webcamRef}
+                                    screenshotFormat="image/jpeg"
+
+                                    videoConstraints={isMobile ? videoConstraints_mobile : videoConstraints}
+                                    style={{ boxShadow: "4.3px 8.6px 8.6px hsl(0deg 0% 0% / 0.37)", borderRadius: "10px" }}
+                                />
+                            </div>
+
+
+                            <div>
+                                <div className="d-flex  justify-content-center"
+                                    style={{
+                                        position: "absolute",
+                                        top: "563px",
+                                        right: "44px",
+                                        left: "44px",
+                                    }}>
+
+                                    <Link to="/">
+
+
+
+                                    </Link>
+                                    <div className="search-box " onClick={capture}>
+                                        <button className="btn-search">
+                                            <i class="fas fa-camera"></i>
+                                        </button>
+                                        <input type="text" className="input-search" />
+                                    </div>
+
+
+
+
+                                </div>
+
+
+                                <div className="search-box mx-2" style={{
+                                    position: "absolute",
+                                    top: "-63.5px",
+                                    right: "26px",
+                                    left: "257px"
+                                }} >
+                                    <div className="">
+                                        <ImageUploading
+                                            multiple
+                                            value={images}
+                                            onChange={onChange}
+                                            maxNumber={maxNumber}
+                                            dataURLKey="data_url">
+
+                                            {({
+                                                imageList,
+                                                onImageUpload,
+                                                onImageRemoveAll,
+                                                onImageUpdate,
+                                                onImageRemove,
+                                                isDragging,
+                                                dragProps
+                                            }) => (
+                                                // write your building UI
+                                                <div className="" >
+                                                    {imageList.map((image, index) => (
+                                                        <div key={index} className="image-item">
+                                                            <img src={image.data_url} alt="" width="100" />
+                                                            <div className="image-item__btn-wrapper">
+
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                    <div className="search-box mx-2" onClick={onImageUpload} {...dragProps} >
+                                                        <button className="btn-search " >
+                                                            <i className="far fa-images"></i>
+                                                        </button>
+                                                        <input type="text" className="input-search" style={{ backgroundColor: "#e76e3d" }} />
+                                                    </div>
+
+
+                                                </div>
+                                            )}
+                                        </ImageUploading>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>}
+                </div>
+
+
+            </div >
+        ) */

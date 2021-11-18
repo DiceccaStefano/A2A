@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="footer-dark">
                 <footer>
                     <div className="container">
-                        <div className="row">
+                        <div className="row text-center">
                             <div className="col-sm-6 col-md-4 item text">
                                 <h3 >Services</h3>
                                 <ul>

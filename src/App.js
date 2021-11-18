@@ -20,6 +20,8 @@ import './App.css';
 
 
 
+
+
 //React Router
 import {
   BrowserRouter as Router,
@@ -33,7 +35,10 @@ import {
 //Components
 import Footer from './components/Footer';
 
+import SmallFooter from './components/SmallFooter';
+
 import Nav_bar from './components/Nav_bar';
+import Nav_react from './components/Nav_react';
 
 import Header from './components/Header';
 
@@ -81,14 +86,23 @@ import './styles.css';
 
 const App = () => {
 
+  var isMobile = false; //initiate as false
+  // device detection
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    isMobile = true;
+  }
+
   return <Router>
 
+
+    <Nav_react />
 
 
     <Switch>
 
       <Route exact path="/">
-        <Nav_bar />
+
+
 
         <Header />
         <Cards />
@@ -100,7 +114,7 @@ const App = () => {
       </Route>
 
       <Route path="/servizi">
-        <Nav_bar />
+
 
         <Services />
         <Footer />
@@ -109,25 +123,27 @@ const App = () => {
       </Route>
 
       <Route path="/ia">
-        <Nav_bar />
+
         <TencentRec />
       </Route>
 
       <Route path="/fotocamera">
-        <Nav_bar />
+
         <Camera />
+        {isMobile ? <SmallFooter /> : <Footer />}
+
       </Route>
 
 
       <Route path="/advcamera">
-        <Nav_bar />
+
         <AdvanceCamera />
       </Route>
 
 
 
       <Route path="*">
-        <Nav_bar />
+
         <ErrorPage />
         <Footer />
 

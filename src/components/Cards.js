@@ -7,7 +7,7 @@ function Cards() {
   const Time = (props) => {
 
     return (
-      <div className="margin_h1">
+      <div className="margin_h1" >
 
         <h1 className="App">scopri le novità del {props.day}/{props.month}/{props.year}</h1>
 

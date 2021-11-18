@@ -23,6 +23,7 @@ h1 {
 
 .cards__items {
   margin-bottom: 24px;
+  padding-left: 0px;
 }
 
 .cards__item {

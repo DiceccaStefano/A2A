@@ -1,0 +1,16 @@
+.navbar-ancor {
+  color: whitesmoke !important;
+}
+
+.navbar-ancor:hover {
+  color: white !important;
+  transition: all 0.3s !important;
+}
+
+.btn-collapse-color {
+  color: #009fda !important;
+}
+
+.btn-collapse-color:hover {
+  color: #009fda !important;
+}

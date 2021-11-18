@@ -226,7 +226,7 @@ header .overlay {
   outline: none !important;
   border-radius: 25px !important;
   transition: all 0.5s ease-in-out !important;
-  background-color: #22a6b3;
+  background-color: #009fda;
   padding-right: 40px !important;
   color: #fff !important;
 }
@@ -250,6 +250,21 @@ header .overlay {
   color: #ffffff !important;
   background-color: transparent !important;
   pointer-events: painted !important;
+}
+
+.input-search-trasparent {
+  height: 50px !important;
+  width: 50px !important;
+  border-style: none !important;
+  padding: 10px !important;
+  font-size: 18px !important;
+  letter-spacing: 2px !important;
+  outline: none !important;
+  border-radius: 25px !important;
+  transition: all 0.5s ease-in-out !important;
+  background-color: transparent !important;
+  padding-right: 40px !important;
+  color: #fff !important;
 }
 /* .btn-search:focus ~ .input-search {
   width: 300px !important;
